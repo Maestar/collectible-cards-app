@@ -18,7 +18,7 @@ class PackPicker extends React.Component{
         return (
           <div>
             <h2>This is the pack picker.</h2>
-            <button onClick={this.openPack} className="dnd-pack">OCs Pack</button>
+            <button onClick={this.openPack} className="pack">OCs Pack</button>
           </div>
         );
     };

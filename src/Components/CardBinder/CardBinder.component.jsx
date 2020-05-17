@@ -16,7 +16,14 @@ class CardBinder extends React.Component {
     }
 
     generatePack(){
+        {/*Take a seed, break it down, build pack list from seed, save to state. */}
         const seed = this.props.match.params.packId;
+
+    }
+
+    returnToPacks(){
+        console.log(this.props);
+        //this.props.history.push(`/`);
     }
     render(){
 
@@ -24,11 +31,12 @@ class CardBinder extends React.Component {
             <div>
         {/* this is going to print every card in cards, we need to change this to print from a generated list gathered
             together from multiple rarity lists */}
-            {Object.keys(this.state.cards).map(key => <Card
-                                                        key={key}
-                                                        fish={this.state.cards[key]}/>)};
-
+                {Object.keys(this.state.cards).map(key => <Card
+                                                            key={key}
+                                                            card={this.state.cards[key]}/>)}
+                <button onClick={this.returnToPacks}>Open a new Pack</button>
             </div>
+
         );
     }
 }
