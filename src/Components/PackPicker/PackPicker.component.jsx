@@ -34,7 +34,7 @@ class PackPicker extends React.Component{
           <div className="flex-container">
             <div className="pack-grid">
               <h2 className="pack-grid-title">Select a Pack..</h2>
-              <button className="pack-grid-item" onClick={this.generatePack} className="pack">OCs Pack</button>
+              <button className="pack-grid-item" onClick={this.generatePack}>OCs Pack</button>
             </div>
           </div>
         );
