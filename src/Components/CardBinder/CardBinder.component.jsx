@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from '../Card/Card.component';
 import cardList from '../../cardList';
+import './CardBinder.styles.css';
 
 //pull the seed from the url.
 class CardBinder extends React.Component {
@@ -10,31 +11,57 @@ class CardBinder extends React.Component {
         pack: {}
     }
 
-    componentDidMount(){
-        //load cards into state
-        this.setState({cards: cardList});
-    }
 
-    generatePack(){
-        {/*Take a seed, break it down, build pack list from seed, save to state. */}
+
+    openPack = () => {
+        //Take a seed, break it down, build pack list from seed, save to state.
         const seed = this.props.match.params.packId;
+        let packList = {};
+        const cardArray = seed.split(":");
+        //this is an old fashion forloop because I want to take advantage of it's index.
+        for (let index = 0; index < cardArray.length; index++){
+            console.log(index);
+            if(index === 0){
+                //pull from rares
+                packList[`card${index}`] = cardList.rareList[cardArray[index]];
+                console.log('in 0');
+            }
+            else if (index > 0 && index < 4){
+                packList[`card${index}`] = cardList.uncommonList[cardArray[index]];
+                console.log('in 1-3')
+            }
+            else{
+                packList[`card${index}`] = cardList.commonList[cardArray[index]];
+                console.log('in 4+');
+            }
+        }
+        console.log(JSON.stringify(packList));
+        this.setState({cards: packList});
+    }
+
+    returnToPacks = () => {
+        this.props.history.push(`/`);
+    }
+
+    componentDidMount(){
+        //generate pack's contents off seed.
+        this.openPack();
+
 
     }
 
-    returnToPacks(){
-        console.log(this.props);
-        //this.props.history.push(`/`);
-    }
     render(){
 
         return (
-            <div>
+            <div class="float-container">
+            <div className="card-grid">
         {/* this is going to print every card in cards, we need to change this to print from a generated list gathered
             together from multiple rarity lists */}
                 {Object.keys(this.state.cards).map(key => <Card
                                                             key={key}
                                                             card={this.state.cards[key]}/>)}
-                <button onClick={this.returnToPacks}>Open a new Pack</button>
+                <button className="card-grid-button" onClick={this.returnToPacks}>Open a new Pack</button>
+            </div>
             </div>
 
         );

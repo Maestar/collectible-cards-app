@@ -1,0 +1,28 @@
+.card{
+    width: 180px;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 1px darkgray;
+    border-radius: 5px;
+    margin: 2%;
+    padding: 5px;
+    box-shadow: 5px 5px 5px darkslateblue;
+}
+
+.card-title{
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+.card-image{
+    background: red;
+    min-width: 100%;
+    height: 100px;
+}
+
+.card-desc{
+    text-align: center;
+}

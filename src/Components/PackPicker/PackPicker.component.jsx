@@ -1,13 +1,28 @@
 import React from 'react';
+import './PackPicker.styles.css';
 
 
 class PackPicker extends React.Component{
 
 
 
-    openPack = () => {
+    generatePack = () => {
+      let newSeed = '';
       //1. generate a seed for generating cards.
-      const newSeed = Math.floor((Math.random() * 20) + 1);
+      //these are all 5 now for testing reasons
+      newSeed += `${Math.floor((Math.random() * 5) + 1)}:`;
+      for(let i = 0; i < 3; i++){
+        newSeed += `${Math.floor((Math.random() * 5) + 1)}:`;
+      }
+      for(let j = 0; j < 6; j++){
+        if(j === 5){
+          newSeed += `${Math.floor((Math.random() * 5) + 1)}`;
+        }
+        else{
+          newSeed += `${Math.floor((Math.random() * 5) + 1)}:`;
+        }
+      }
+
       console.log(newSeed);
 
       //2. load the cardbinder.
@@ -16,9 +31,11 @@ class PackPicker extends React.Component{
 
     render (){
         return (
-          <div>
-            <h2>This is the pack picker.</h2>
-            <button onClick={this.openPack} className="pack">OCs Pack</button>
+          <div className="flex-container">
+            <div className="pack-grid">
+              <h2 className="pack-grid-title">Select a Pack..</h2>
+              <button className="pack-grid-item" onClick={this.generatePack} className="pack">OCs Pack</button>
+            </div>
           </div>
         );
     };

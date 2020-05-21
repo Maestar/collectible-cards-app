@@ -1,0 +1,18 @@
+.card-grid{
+    display: grid;
+    grid-template-columns: repeat(5, 200px);
+    gap: 1rem;
+    justify-items: center;
+    align-items: center;
+}
+
+.float-container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-grid-button{
+    grid-column-start: 3;
+}
