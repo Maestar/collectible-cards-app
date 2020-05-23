@@ -1,28 +1,43 @@
+body{
+    background: rgb(6,126,180);
+    background: linear-gradient(45deg, rgba(6,126,180,1) 0%, rgba(20,59,116,1) 12%, rgba(26,5,84,1) 27%, rgba(0,0,0,1) 100%);
+}
 .card{
     width: 180px;
     height: 240px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: solid 1px darkgray;
+    border: solid 3px deepskyblue;
     border-radius: 5px;
     margin: 2%;
     padding: 5px;
-    box-shadow: 5px 5px 5px darkslateblue;
+    box-shadow: 0 0 10px dodgerblue;
+    transform-style: preserve-3d;
+    background-color: rgba(28, 28, 29, 0.596);
 }
 
+
 .card-title{
-    text-align: left;
+    color: deepskyblue;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
     margin: 0;
     padding: 0;
+    padding-bottom: 5px;
 }
 
 .card-image{
-    background: red;
-    min-width: 100%;
+    border: solid 1px deepskyblue;
+    min-width: 95%;
     height: 100px;
+    transform: translateZ(20px);
 }
 
 .card-desc{
-    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: deepskyblue;
+    text-align: left;
+    font-size: 12px;
+    padding: 5px;
 }
