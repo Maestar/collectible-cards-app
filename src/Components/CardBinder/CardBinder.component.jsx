@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from '../Card/Card.component';
-import cardList from '../../cardList';
+import CardList from '../../cardList';
+import Modal from '../Modal/Modal.component';
 import './CardBinder.styles.css';
 
 //pull the seed from the url.
@@ -8,7 +9,8 @@ class CardBinder extends React.Component {
 
     state = {
         cards: {},
-        pack: {}
+        pack: {},
+        pickedCard: {}
     }
 
 
@@ -23,15 +25,15 @@ class CardBinder extends React.Component {
             console.log(index);
             if(index === 0){
                 //pull from rares
-                packList[`card${index}`] = cardList.rareList[cardArray[index]];
+                packList[`card${index}`] = CardList.rareList[cardArray[index]];
                 console.log('in 0');
             }
             else if (index > 0 && index < 4){
-                packList[`card${index}`] = cardList.uncommonList[cardArray[index]];
+                packList[`card${index}`] = CardList.uncommonList[cardArray[index]];
                 console.log('in 1-3')
             }
             else{
-                packList[`card${index}`] = cardList.commonList[cardArray[index]];
+                packList[`card${index}`] = CardList.commonList[cardArray[index]];
                 console.log('in 4+');
             }
         }
@@ -53,6 +55,7 @@ class CardBinder extends React.Component {
     render(){
 
         return (
+            <>
             <div class="float-container">
             <div className="card-grid">
         {/* this is going to print every card in cards, we need to change this to print from a generated list gathered
@@ -63,6 +66,8 @@ class CardBinder extends React.Component {
                 <button className="card-grid-button" onClick={this.returnToPacks}>Open a new Pack</button>
             </div>
             </div>
+            <Modal card={this.state.pickedCard} />
+            </>
 
         );
     }
