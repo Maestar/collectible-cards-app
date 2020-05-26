@@ -6,12 +6,12 @@ import Tilty from "react-tilty";
 class Card extends React.Component {
 
   render() {
-    //NOTE:add a rarity prop and check rarity to determine what to render.
-    //this lets us change how the card will look based on rarity.
-      const{name, image, desc} = this.props.card;
+    //add onclick that calls a function in card binder that sets state to
+    //let state know which card was clicked so the modal can load that data.
+      const{name, image, desc, rarity} = this.props.card;
     return (
 
-      <Tilty className="card" >
+      <Tilty className={`card ${rarity}`} >
         <h4 className="card-title">{name}</h4>
         <img className="card-image" alt='cardImg' src={image}/>
         <p className="card-desc">{desc}</p>

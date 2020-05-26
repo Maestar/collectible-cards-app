@@ -1,3 +1,17 @@
+:root{
+    --rare-border-color: #A54AEF;
+    --uncommon-border-color: deepskyblue;
+    --common-border-color: lightgreen;
+
+    --rare-background-color: rgba(56, 29, 56, 0.616);
+    --uncommon-background-color: rgba(33, 33, 59, 0.616);
+    --common-background-color: rgba(34, 63, 48, 0.616);
+
+    --rare-text-color: rgb(191, 109, 230);
+    --uncommon-text-color: rgb(83, 164, 240);
+    --common-text-color: rgb(121, 226, 121);
+}
+
 body{
     background: rgb(6,126,180);
     background: linear-gradient(45deg, rgba(6,126,180,1) 0%, rgba(20,59,116,1) 12%, rgba(26,5,84,1) 27%, rgba(0,0,0,1) 100%);
@@ -8,15 +22,11 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: solid 3px deepskyblue;
     border-radius: 5px;
     margin: 2%;
     padding: 5px;
-    box-shadow: 0 0 10px dodgerblue;
     transform-style: preserve-3d;
-    background-color: rgba(28, 28, 29, 0.596);
 }
-
 
 .card-title{
     color: deepskyblue;
@@ -41,3 +51,54 @@ body{
     font-size: 12px;
     padding: 5px;
 }
+
+.rare{
+    border: solid 3px var(--rare-border-color);
+    box-shadow: 0 0 10px var(--rare-border-color);
+    background-color: var(--rare-background-color);
+}
+.rare .card-desc{
+    color: var(--rare-text-color);
+}
+.rare .card-title{
+    color: var(--rare-text-color);
+}
+.rare .card-image{
+    border: solid 1px  var(--rare-border-color);
+}
+.uncommon .card-desc{
+    color: var(--uncommon-text-color);
+}
+.uncommon .card-title{
+    color: var(--uncommon-text-color);
+}
+
+.uncommon .card-image{
+    border: solid 1px var(--uncommon-border-color);
+}
+
+.common .card-desc{
+    color: var(--common-text-color);
+}
+
+.common .card-title{
+    color: var(--common-text-color);
+}
+
+.common .card-image{
+    border: 1px solid var(--common-border-color);
+}
+
+.uncommon{
+    border: solid 3px var(--uncommon-border-color);
+    box-shadow: 0 0 10px var(--uncommon-border-color);
+    background-color: var(--uncommon-background-color);
+}
+
+.common{
+    border: solid 3px var(--common-border-color);
+    box-shadow: 0 0 10px var(--common-border-color);
+    background-color: var(--common-background-color);
+}
+
+
