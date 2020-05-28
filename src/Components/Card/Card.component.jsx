@@ -11,7 +11,7 @@ class Card extends React.Component {
       const{name, image, desc, rarity} = this.props.card;
     return (
 
-      <Tilty className={`card ${rarity}`} >
+      <Tilty className={`card ${rarity}`} onClick={() => this.props.flipModal(this.props.card)} >
         <h4 className="card-title">{name}</h4>
         <img className="card-image" alt='cardImg' src={image}/>
         <p className="card-desc">{desc}</p>

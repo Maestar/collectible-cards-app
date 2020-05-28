@@ -10,7 +10,8 @@ class CardBinder extends React.Component {
     state = {
         cards: {},
         pack: {},
-        pickedCard: {}
+        pickedCard: {},
+        show: false
     }
 
 
@@ -45,6 +46,16 @@ class CardBinder extends React.Component {
         this.props.history.push(`/`);
     }
 
+    flipModal = (obj) => {
+        if(this.state.show){
+            this.setState({show: false});
+        }
+        else{
+            this.setState({pickedCard: obj, show: true});
+        }
+
+    }
+
     componentDidMount(){
         //generate pack's contents off seed.
         this.openPack();
@@ -58,15 +69,20 @@ class CardBinder extends React.Component {
             <>
             <div class="float-container">
             <div className="card-grid">
-        {/* this is going to print every card in cards, we need to change this to print from a generated list gathered
-            together from multiple rarity lists */}
                 {Object.keys(this.state.cards).map(key => <Card
                                                             key={key}
-                                                            card={this.state.cards[key]}/>)}
+                                                            card={this.state.cards[key]}
+                                                            flipModal={this.flipModal}
+                                                            />
+                                                    )}
                 <button className="card-grid-button" onClick={this.returnToPacks}>Open a new Pack</button>
             </div>
             </div>
-            <Modal card={this.state.pickedCard} />
+            <Modal
+                show={this.state.show}
+                card={this.state.pickedCard}
+                flipModal={this.flipModal}
+                />
             </>
 
         );
