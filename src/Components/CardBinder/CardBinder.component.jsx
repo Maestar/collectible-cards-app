@@ -73,10 +73,12 @@ class CardBinder extends React.Component {
                                                             key={key}
                                                             card={this.state.cards[key]}
                                                             flipModal={this.flipModal}
+                                                            location='binder'
                                                             />
                                                     )}
-                <button className="card-grid-button" onClick={this.returnToPacks}>Open a new Pack</button>
+
             </div>
+            <button className="new-pack-button" onClick={this.returnToPacks}>Open a new Pack</button>
             </div>
             <Modal
                 show={this.state.show}

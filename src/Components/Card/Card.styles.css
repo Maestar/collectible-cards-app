@@ -16,9 +16,12 @@ body{
     background: rgb(6,126,180);
     background: linear-gradient(45deg, rgba(6,126,180,1) 0%, rgba(20,59,116,1) 12%, rgba(26,5,84,1) 27%, rgba(0,0,0,1) 100%);
 }
+/*
+========================
+-> Main Card Styles <-
+========================
+*/
 .card{
-    width: 180px;
-    height: 240px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,27 +32,37 @@ body{
     cursor: pointer;
 }
 
+.little-card{
+    width: 180px;
+    height: 240px;
+    font-size: 12px;
+}
+
+.big-card{
+    width: 360px;
+    height: 480px;
+    font-size: 18px;
+    margin: 2em auto;
+}
+
 .card-title{
-    color: deepskyblue;
     font-family: 'Orbitron', sans-serif;
-    font-size: 14px;
+    font-size: 1.2em;
     margin: 0;
     padding: 0;
     padding-bottom: 5px;
 }
 
 .card-image{
-    border: solid 1px deepskyblue;
     min-width: 95%;
-    height: 100px;
+    height: 38%;
     transform: translateZ(20px);
 }
 
 .card-desc{
     font-family: 'Montserrat', sans-serif;
-    color: deepskyblue;
     text-align: left;
-    font-size: 12px;
+    font-size: 1em;
     padding: 5px;
 }
 

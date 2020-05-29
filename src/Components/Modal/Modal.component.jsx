@@ -9,7 +9,11 @@ class Modal extends React.Component{
         if(this.props.show){
         return (
             <div className='overlay'>
-                    <Card className='modal-content' card={this.props.card} flipModal={this.props.flipModal}/>
+                    <Card
+                        card={this.props.card}
+                        flipModal={this.props.flipModal}
+                        location='modal'
+                    />
             </div>
         );
         }
