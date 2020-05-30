@@ -12,10 +12,6 @@
     --common-text-color: rgb(121, 226, 121);
 }
 
-body{
-    background: rgb(6,126,180);
-    background: linear-gradient(45deg, rgba(6,126,180,1) 0%, rgba(20,59,116,1) 12%, rgba(26,5,84,1) 27%, rgba(0,0,0,1) 100%);
-}
 /*
 ========================
 -> Main Card Styles <-

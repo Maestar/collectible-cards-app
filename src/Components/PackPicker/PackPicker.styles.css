@@ -5,13 +5,3 @@
     align-items:center ;
 }
 
-.pack-grid{
-    display: grid;
-    grid-template-columns: repeat(3,100px);
-    justify-items: center;
-    align-items: center;
-}
-
-.pack-grid-title{
-    grid-column: 1 / span 3;
-}

@@ -32,10 +32,7 @@ class PackPicker extends React.Component{
     render (){
         return (
           <div className="flex-container">
-            <div className="pack-grid">
-              <h2 className="pack-grid-title">Select a Pack..</h2>
-              <button className="pack-grid-item" onClick={this.generatePack}>OCs Pack</button>
-            </div>
+              <button className="new-pack-button" onClick={this.generatePack}>Generate Cards</button>
           </div>
         );
     };
